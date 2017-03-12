@@ -204,15 +204,15 @@ $(function() {
   }
 
   //LINE CHART WITH AREA IN SIDEBAR
-    new Chartist.Line('#ct2-chart', {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8],
-        series: [
-            [5, 9, 7, 8, 5, 3, 5, 4]
-        ]
-    }, {
-        low: 0,
-        showArea: true
-    });
+  //   new Chartist.Line('#ct2-chart', {
+  //       labels: [1, 2, 3, 4, 5, 6, 7, 8],
+  //       series: [
+  //           [5, 9, 7, 8, 5, 3, 5, 4]
+  //       ]
+  //   }, {
+  //       low: 0,
+  //       showArea: true
+  //   });
     
   //Trending chart for small screen
   if(window_width <= 480){    
@@ -220,6 +220,77 @@ $(function() {
       height: '200'
     });
   }
+
+
+
+  lerajax();
+
+  $('.modal').modal();
+
+//--------------------- INSERIR USUARIO - MODAL
+
+
+  $('#frm-insert').on('submit',function(e){
+    e.preventDefault();
+    var url = $(this).attr('action');
+    var post = $(this).attr('method');
+    var data = $(this).serialize();
+
+    $.ajax({
+      type : post,
+      url  : url,
+      data : data,
+      success:function(data){
+
+        lerajax();
+     $('#frm-insert').trigger('reset');
+      }
+    })
+  });
+
+//--------------------- LER USUARIO AJAX
+
+  function lerajax()
+  {
+
+    $.ajaxSetup({
+      headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+
+
+    $.ajax({
+      type : 'get',
+      url : "/admin/usuarios/ler/",
+      dataType : 'html',
+      success:function(data)
+      {
+        $('.table-responsive').html(data);
+      }
+    });
+  }
+
+  //--------------------- GRAVAR DADOS UPDATE
+
+  $(document).on('click', '.btn-edit', function(e){
+    var id = $(this).val();
+    // alert(id);
+    $.ajax({
+      type : 'get',
+      url  : "/admin/usuarios/getEdit/",
+      data : {id:id},
+      success:function(data)
+      {
+        console.log(data)
+        var frmupdate = $('#frm-update');
+        frmupdate.find('#id').val(data.id);
+        frmupdate.find('#name').val(data.name);
+        frmupdate.find('#email').val(data.email);
+        $("#popup-update").modal('open');
+      }
+    })
+  })
+
+
+
 
 
 }); // end of document ready

@@ -25,14 +25,14 @@
                       </div>
                   </div>
               </li>
-              <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+              <li class="bold"><a href="{{ route('admin.dashboard') }}" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
               </li>
-              <li class="bold"><a href="app-email.html" class="waves-effect waves-cyan"><i class="mdi-communication-email"></i> Mensagens <span class="new badge">4</span></a>
+              <li class="bold"><a href="{{ route('admin.mensagens') }}" class="waves-effect waves-cyan"><i class="mdi-communication-email"></i> Mensagens <span class="new badge">4</span></a>
                </li>
-              <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-action-account-child"></i> Úsuarios</a>
+              <li class="bold"><a href="{{ route('admin.usuarios') }}" class="waves-effect waves-cyan"><i class="mdi-action-account-child"></i> Úsuarios</a>
               </li>
               </li>
-               <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-action-perm-contact-cal"></i> Clientes</a>
+               <li class="bold"><a href="{{ route('admin.clientes') }}" class="waves-effect waves-cyan"><i class="mdi-action-perm-contact-cal"></i> Clientes</a>
               </li>
               </li>
               <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Agenda</a>

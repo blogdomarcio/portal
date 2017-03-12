@@ -36,17 +36,17 @@
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="{{asset('/materialize/css/prism.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="{{asset('/materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="{{asset('/materialize/js/plugins/chartist-js/chartist.min.css" type="text/css')}}" rel="stylesheet" media="screen,projection">
+  {{--<link href="{{asset('/materialize/js/plugins/chartist-js/chartist.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">--}}
 </head>
 
 <body>
-  <!-- Start Page Loading -->
-  <div id="loader-wrapper">
-      <div id="loader"></div>        
-      <div class="loader-section section-left"></div>
-      <div class="loader-section section-right"></div>
-  </div>
-  <!-- End Page Loading -->
+  {{--<!-- Start Page Loading -->--}}
+  {{--<div id="loader-wrapper">--}}
+      {{--<div id="loader"></div>        --}}
+      {{--<div class="loader-section section-left"></div>--}}
+      {{--<div class="loader-section section-right"></div>--}}
+  {{--</div>--}}
+  {{--<!-- End Page Loading -->--}}
 
   <!-- //////////////////////////////////////////////////////////////////////////// -->
 
